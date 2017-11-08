@@ -7,6 +7,7 @@
 <h3>
   <strong>
     <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    <%= link_to 'Add Review', new_restaurant_review_path(restaurant), :class => "btn btn-info"  %>
   </strong>
 </h3>
 <ul>
@@ -21,3 +22,4 @@
   </li>
 </ul>
 <% end %>
+
