@@ -1,0 +1,23 @@
+<h1>
+  Restaurants List
+</h1>
+<%= link_to 'New Restaurant', new_restaurant_path, :class => "btn btn-primary" %>
+
+<% @restaurants.each do |restaurant| %>
+<h3>
+  <strong>
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  </strong>
+</h3>
+<ul>
+  <li>
+    <strong>Address: </strong><%= restaurant.address %>
+  </li>
+  <li>
+    <strong>Phone Number: </strong><%= restaurant.phone_number %>
+  </li>
+  <li>
+    <strong>Category: </strong><%= restaurant.category %>
+  </li>
+</ul>
+<% end %>

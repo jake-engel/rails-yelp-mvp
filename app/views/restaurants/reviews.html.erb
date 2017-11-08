@@ -1,0 +1,24 @@
+<h1>
+  Reviews for <%= @restaurant.name.downcase %>
+<%= link_to 'New Review', new_restaurant_review_path(@restaurant), :class => "btn btn-primary" %>
+</h1>
+
+<ul>
+  <% @restaurant.reviews.all.each_with_index do |review, iter| %>
+    <li>
+      <p>
+        <strong>Review <%= iter + 1 %></strong>
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;
+        <strong>Content:</strong> <%= review.content %>
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;
+        <strong>Rating: </strong> <%= review.rating %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Restaurant Page', restaurant_path(@restaurant), :class => "btn btn-primary" %>
+<%= link_to 'Homepage', restaurants_path, :class => "btn btn-primary" %>
